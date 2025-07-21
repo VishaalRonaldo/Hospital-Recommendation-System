@@ -11,15 +11,15 @@ app = Flask(__name__)
 
 # Loading the datasets from Kaggle website
 
-sym_des = pd.read_csv(r"C:/Users/Vishaal/Desktop/project/Disease-Prediction-and-Medical-Recommendation-System-main/kaggle_dataset/symptoms_df.csv")
-precautions = pd.read_csv(r"C:/Users/Vishaal/Desktop/project/Disease-Prediction-and-Medical-Recommendation-System-main/kaggle_dataset/precautions_df.csv")
-workout = pd.read_csv(r"C:/Users/Vishaal/Desktop/project/Disease-Prediction-and-Medical-Recommendation-System-main/kaggle_dataset/workout_df.csv")
-description = pd.read_csv(r"C:/Users/Vishaal/Desktop/project/Disease-Prediction-and-Medical-Recommendation-System-main/kaggle_dataset/description.csv")
-medications = pd.read_csv(r"C:/Users/Vishaal/Desktop/project/Disease-Prediction-and-Medical-Recommendation-System-main/kaggle_dataset/medications.csv")
-diets = pd.read_csv(r"C:/Users/Vishaal/Desktop/project/Disease-Prediction-and-Medical-Recommendation-System-main/kaggle_dataset/diets.csv")
-hospital_data = pd.read_csv(r"C:/Users/Vishaal/Desktop/project/Disease-Prediction-and-Medical-Recommendation-System-main/kaggle_dataset/HospitalsInIndia.csv")
+sym_des = pd.read_csv("kaggle_dataset/symptoms_df.csv")
+precautions = pd.read_csv("kaggle_dataset/precautions_df.csv")
+workout = pd.read_csv("kaggle_dataset/workout_df.csv")
+description = pd.read_csv("kaggle_dataset/description.csv")
+medications = pd.read_csv("kaggle_dataset/medications.csv")
+diets = pd.read_csv("kaggle_dataset/diets.csv")
+hospital_data = pd.read_csv("kaggle_dataset/HospitalsInIndia.csv")
 hospital_data.dropna(subset=['Disease'], inplace=True)
-Rf = pickle.load(open("C:/Users/Vishaal/Desktop/project/Disease-Prediction-and-Medical-Recommendation-System-main/model/RandomForest.pkl",'rb'))
+Rf = pickle.load(open("model/RandomForest.pkl",'rb'))
 
 
 # Here we make a dictionary of symptoms and diseases and preprocess it
